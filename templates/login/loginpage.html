@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Sign up / Login Form</title>
+  <link rel="stylesheet" href="/static/css/style4.css">
+
+</head>
+<body>
+
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
+                <h1 class="opacity">LOGIN</h1>
+
+            <!-- Display error message here if authentication fails -->
+            {% if error_message %}
+            <div id="error-message" style="color: red; font-size: 26px; font-weight: bold; margin-bottom: 10px;">
+                {{ error_message }}
+            </div>
+            <script>
+                setTimeout(function() {
+                    document.getElementById('error-message').style.display = 'none';
+                }, 5000);  // Hide the message after 5 seconds
+            </script>
+            {% endif %}
+                <form action="{% url 'adminform' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" placeholder="USERNAME" name = 'username' required/>
+                    <input type="password" placeholder="PASSWORD" name = 'password' required/>
+                    <button class="opacity" type = 'submit'>SUBMIT</button>
+                </form>
+                <div class="register-forget opacity">
+                    <a href="">REGISTER</a>
+                    <a href="{% url 'password_reset' %}" >FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+  
+</body>
+</html>

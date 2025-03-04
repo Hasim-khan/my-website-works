@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Mirrored from winsfolio.net/html/sasnio/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 11:54:42 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My website</title>
+  <link rel="icon" href="/static/img/heading-img.png">
+  <!-- CSS only -->
+   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+   <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+   <!-- fancybox -->
+   <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+   <link rel="stylesheet" href="/static/css/fontawesome.min.css">
+   <!-- style -->
+   <link rel="stylesheet" href="/static/css/style.css">
+   <!-- responsive -->
+   <link rel="stylesheet" href="/static/css/responsive.css">
+   <!-- color -->
+   <link rel="stylesheet" href="/static/css/color.css">
+   <script src="/static/js/jquery-3.6.0.min.js"></script>
+   <script src="/static/js/preloader.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetify@0.0.6/dist/sweetify.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+ </head>
+<body>
+  {% load sweetify %}{% sweetify %}
+<!-- loader -->
+<div class="preloader"> 
+      <div class="loader4"></div>
+</div>
+<!-- loader end -->
+<header class="topnav" style="position: sticky; top: 0; width: 100%; background-color: black; z-index: 1000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); ">
+  <div class="container">
+    {% comment %} do sticky this  {% endcomment %}
+    <div class="header-bar">
+      <a href="index-2"><img src="/static/img/logo.png" alt="logo"></a>
+        <nav class="navbar">
+          <ul class="navbar-links">
+            <li class="navbar-dropdown has-children">
+              <a href="/">home</a>
+              {% comment %} <ul class="dropdown">
+                <li><a href="index-2"><i class="fa-solid fa-arrow-right"></i>home 1</a></li>
+                <li><a href="index-3"><i class="fa-solid fa-arrow-right"></i>home 2</a></li>
+                <li><a href="index-4"><i class="fa-solid fa-arrow-right"></i>home 3</a></li>
+              </ul> {% endcomment %}
+            </li>
+            <li class="navbar-dropdown">
+                <a href="{% url "about_us" %}">About</a>
+            </li>
+            <li class="navbar-dropdown has-children">
+                <a href="#">pages</a>
+                <ul class="dropdown">
+                    <li><a href="{% url "services" %}"><i class="fa-solid fa-arrow-right"></i>Services</a></li>
+                    <li><a href="{% url "service-details" %}"><i class="fa-solid fa-arrow-right"></i>Services details</a></li>
+                    <li><a href="{% url "team-details" %}"><i class="fa-solid fa-arrow-right"></i>team details</a></li>
+                    <li><a href="{% url "pricingplans" %}"><i class="fa-solid fa-arrow-right"></i>pricing plans</a></li>
+                </ul>
+            </li>
+            <li class="navbar-dropdown has-children">
+                <a href="{% url "ourprojects" %}">Our Project</a>
+            </li>
+            <li class="navbar-dropdown has-children">
+                      <a href="{% url "our_blog" %}">Blogs</a>
+                      {% comment %} <ul class="dropdown">
+                        <li><a href=><i class="fa-solid fa-arrow-right"></i>our blog</a></li>
+                        <li><a href="{% url "blog_details" %}"><i class="fa-solid fa-arrow-right"></i>blog details</a></li>
+                      </ul> {% endcomment %}
+            </li>
+            <li class="navbar-dropdown">
+                <a href="{% url "Contact" %}">contact</a>
+            </li>
+            <li class="navbar-dropdown">
+              <a href="{% url "faqs" %}">Faq’s</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="pickup">
+            <div class="menu-icon cursor-pointer">
+                <span class="text"><span class="word">Menu</span></span>
+                <span class="icon">
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+            <a href="{% url "loginpage" %}" class="btn">login</a>
+        </div>
+        
+        <div class="bar-menu" style="position: fixed; top: 0; right: 0; z-index: 1000; background-color: #fff; padding: 10px;">
+          <i class="fa-solid fa-bars" style="color:rgb(13, 31, 50);"></i>
+        </div>
+        
+    </div>
+
+    
+    <div class="mobile-nav hmburger-menu" id="mobile-nav" style="display:block; background-image: url(/static/img/background.png);">
+      <div class="res-log">
+        <a href="index-2">
+          <img src="/static/img/logo-b.png" alt="Responsive Logo">
+        </a>
+      </div>
+        <ul>
+          <li class="menu-item-has-children">
+            <a href="/">home</a>
+            {% comment %} <i class="fa-solid fa-angle-right"></i> {% endcomment %}
+          </li>
+          <li><a href="{% url "about_us" %}">about</a></li>
+          <li class="menu-item-has-children">
+            <a href="JavaScript:void(0)">pages<i class="fa-solid fa-angle-right"></i></a>
+            <ul class="sub-menu">
+                <li><a href="{% url "services" %}">Services</a></li>
+                <li><a href="{% url "service-details" %}">Service details</a></li>
+                <li><a href="{% url "team-details" %}">team details</a></li>
+                <li><a href="{% url "pricingplans" %}">pricing plans</a></li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="{% url "ourprojects" %}"> Our project</a>
+          </li>
+         
+          <li class="menu-item-has-children">
+            <a href="{% url "our_blog" %}">Blogs</a>
+            {% comment %} <ul class="sub-menu">
+                <li><a href=>our blog</a></li>
+                <li><a href="{% url "blog_details" %}">blog details</a></li>
+            </ul> {% endcomment %}
+          </li>
+          
+          <li><a href="{% url "Contact" %}">Contact us</a></li>
+          <li><a href="{% url "faqs" %}">faqs</a></li>
+          <li><a href="{% url "loginpage" %}">login</a></li>
+        </ul>
+
+        <div class="menu-sidebar-single-widget">
+            <h5 class="menu-sidebar-title">Contact Info</h5>
+            <div class="header-contact-info">
+              <span><i class="fa-solid fa-location-dot"></i>20, Bordeshi, New York, US</span>
+              <span>
+                <a href="mailto:username@domain.com">
+                  <i class="fa-solid fa-envelope"></i>username@domain.com
+                </a>
+              </span>
+              <span><a href="callto:+123-456-7890"><i class="fa-solid fa-phone"></i>+123-456-7890</a></span>
+            </div>
+            <div class="social-profile">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <a href="JavaScript:void(0)" id="res-cross"><i class="fa-regular fa-circle-xmark"></i></a>
+    </div>
+  </div>
+  <div class="hamenu valign">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 valign">
+                            <div class="cont-info two">
+                                <div class="about-sasnio bottom">
+                                    <img src="/static/img/about-immg.jpg" alt="about-immg">
+                                    <h4>About Sasnio Company</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed eius to incididu nt ut labore et dolore magna aliqua. Ut enims ad minim venimassa. Lorem ips um do lor sit amet,to mod te mpor incididunt</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 valign">
+                            <div class="cont-info">
+                                <div class="item mb-50">
+                                    <h6 class="text-u fw-600 mb-20">Location</h6>
+                                    <p class="fw-400 fz-18">Runway East Borough Market, 20 St New town Street 2478, London</p>
+                                </div>
+                                <div class="item mb-50">
+                                    <h6 class="text-u fw-600 mb-20">HOW TO CONNECT</h6>
+                                    <p class="fw-400 fz-18"><a href="callto:+12343432445">+1234 3432445</a></p>
+                                    <p class="fw-400 fz-18"><a href="mailto:username@domain.com">username@domain.com</a></p>
+                                </div>
+                                <div class="bottom">
+                                    <h6 class="text-u fw-600 mb-20">Follow Us</h6>
+                                    <ul class="rest social-text d-flex fz-13">
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</header>
+
+{% block pagecontent %}{% endblock pagecontent %}
+
+
+<footer style="background-image: url(/static/img/footer.jpg);">
+    <div class="container">
+        <div class="row align-items-center pb">
+            <div class="col-lg-6">
+                <div class="subscribe-text">
+                    <img src="/static/img/subscribe-icon.png" alt="subscribe-icon">
+                    <div>
+                        <h2>Sign up to our newsletter</h2>
+                        <p>get recent content and updates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form class="subscribe">
+                    <input type="text" name="Enter Your Email" placeholder="Enter Your Email Address...">
+                    <button class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="information">
+                    <span>Drop us an email</span>
+                    <a href="mailto:username@domain.com">username@domain.com</a>
+                    <div class="d-flex">   
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h6>Runway East Borough Market, 20 St  New town Street 2478, London</h6>
+                    </div>
+                    <ul class="social-icon">
+                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-links">
+                  <h3>What We Do</h3>
+                  <div class="boder"></div>
+                    <ul>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Digital Marketing Audit</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Competitor Analysis</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Audience Development</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Creative Campaigns</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Thought Leadership</a></li>
+                      
+                    </ul>
+                  </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-links">
+                  <h3>useful links</h3>
+                  <div class="boder"></div>
+                    <ul>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="{% url "Contact" %}">Contact Us</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Privacy Policy</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">App Download</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">How It Works</a></li>
+                      <li><i class="fa-solid fa-angle-right"></i><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+        <div class="copyrights">
+            <div class="d-flex align-items-center">
+                <a href="#"><img src="/static/img/logo.png" alt="logo"></a>
+                <div class="boder"></div>
+                <span>Phone No.  <a href="callto:88(9800)6802">+88(9800) 6802</a></span>
+            </div>
+            <p>Copyright © <a href="#">Sasino</a> 2023. All Rights Reserved.</p>
+        </div>
+    </div>
+    <img src="/static/img/dots-shaps.png" alt="dots-shaps" class="dots-shaps">
+    <img src="/static/img/shaps-1.png" alt="dots-shaps" class="shaps-1">
+</footer>
+<!-- progress -->
+<div id="progress">
+      <span id="progress-value"><i class="fa-solid fa-up-long"></i></span>
+</div>
+<!-- progress end -->
+
+<!-- Bootstrap Js -->
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/owl.carousel.min.js"></script>
+<!-- fancybox -->
+<script src="/static/js/jquery.fancybox.min.js"></script>
+<script src="/static/js/custom.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+
+{% comment %} <i class="fa-solid fa-angle-right"></i> its right arrow icon {% endcomment %}

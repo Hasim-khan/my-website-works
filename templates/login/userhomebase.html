@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive User Home</title>
+  <link rel="stylesheet" href="/static/css/userhomestyle.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetify@0.0.6/dist/sweetify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  {% comment %} <link rel="stylesheet" href="/static/css/allrecords.css"> {% endcomment %}
+</head>
+<body>
+    {% load sweetify %}{% sweetify %}
+  <!-- TOP USERNAME BAR -->
+  <div class="username-bar">{% block headertitle %}{{user.username}}{% endblock headertitle %}</div>
+
+  <!-- Hamburger Toggle Button for mobile -->
+  <button class="toggle-btn" onclick="toggleSidebar()" style="margin-top: -50px">☰</button>
+
+  <div class="container">
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar" style="margin-top: -29px">
+      <div class="sidebar-header">
+        <h2>User Menu</h2>
+        <!-- Close button (mobile) -->
+        <button class="close-btn" onclick="toggleSidebar()">✖</button>
+      </div>
+      <ul class="nav-list">
+        <a href="{% url 'userhome' %}"  style="text-decoration: none; color: inherit;"><li><span class="icon">🏠</span> Home</li>
+        <a href="{% url 'allrecord' %}"  style="text-decoration: none; color: inherit;"><li><span class="icon">📁</span> All Records</li>
+        <a href="{% url 'password_change' %}" style="text-decoration: none; color: inherit;"><li><span class="icon">🔑</span> Change Password</li>
+        <a href="{% url 'userlogout' %}"  style="text-decoration: none; color: inherit;"><li><span class="icon">🚪</span> Logout</li></a>
+      </ul>
+    </div>
+
+    {% block content %}{% endblock content %}
+    <script src="/static/js/script2.js"></script>
+</body>
+</html>
